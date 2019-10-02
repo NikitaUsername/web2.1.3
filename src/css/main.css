@@ -1,11 +1,14 @@
 .header {
-  padding-top: 60px; }
+  padding-top: 60px;
+}
 
 .form_input {
   width: 500px;
   border-radius: 7px;
   margin-bottom: 20px;
-  margin-right: 20px; }
+  margin-right: 20px;
+}
 
 .form_btn {
-  border-radius: 5px; }
+  border-radius: 5px;
+}
