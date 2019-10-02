@@ -35,6 +35,8 @@ getEl('wind').innerText = "Wind speed:";
 getEl('wind1').innerText = information.wind.speed;
 getEl('clouds').innerText = "Clouds:";
 getEl('clouds1').innerText = information.clouds.all;
+getEl('weatherPic').src = "http://openweathermap.org/img/wn/" + information.weather[0].icon + "@2x.png";
+
 }
 
 
