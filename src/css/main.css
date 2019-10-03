@@ -12,3 +12,7 @@
 .form_btn {
   border-radius: 5px;
 }
+
+#errorMsg {
+  font-size: 250%;
+}
