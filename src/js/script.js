@@ -1,3 +1,9 @@
+$(document).keypress(function (e) {
+    if (e.which == 13) {
+            getWeather();
+    }
+});
+
 function getWeather(button){
 	var cityName = document.getElementById('inp').value;
 	if (cityName.length<1){
@@ -31,7 +37,7 @@ getEl('errorMsg').innerText = " ";
 getEl('city').innerText = "City:";
 getEl('city1').innerText =information.name;
 getEl('temp').innerText = "Temperature:";
-getEl('temp1').innerText =information.main.temp + " C";
+getEl('temp1').innerText =information.main.temp + " ºC";
 getEl('weath').innerText = "Weather:";
 getEl('weath1').innerText = information.weather[0].description;
 getEl('press').innerText = "Pressure:";
