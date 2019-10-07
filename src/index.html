@@ -3,10 +3,11 @@
 
 <head>
     <title>Weather forecast</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="./js/nunjucks.min.js"></script>
 
 </head>
 
@@ -22,68 +23,14 @@
         </div>
         <hr>
     </header>
-    <div class="container">
+    <h1 id="errorMsg"></h1>
+    <div class="container" id="head">
 
-        <div class="row">
-            <div class="col-lg-3">
-                <img id="weatherPic">
-            </div>
-            <div class="col-lg-5">
-                <div id="errorMsg"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="city"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="city1"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="temp"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="temp1"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="weath"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="weath1"></div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="press"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="press1"></div>
-            </div>
-        </div>
+        <script>
+            nunjucks.configure('./njk', {autoscape: true});
+        </script>
 
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="wind"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="wind1"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3">
-                <div id="clouds"></div>
-            </div>
-            <div class="col-lg-3">
-                <div id="clouds1"></div>
-            </div>
-        </div>
-    </div>
 
     </div>
 </body>

@@ -1,0 +1,63 @@
+<div id="DATA">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="weatherPic" {{ information.weather[0].icon }}>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="city">City:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="city1">{{ information.name }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="temp">Temperature:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="temp1">{{ information.main.temp }}
+                ºC</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="weath">Weather:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="weath1">{{ information.weather[0].description }}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="press">Pressure:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="press1">{{ information.main.pressure }}
+                hPa</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="wind">Wind speed:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="wind1">
+                {{information.wind.speed}}
+                m/s</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="clouds">Clouds:</div>
+        </div>
+        <div class="col-lg-3">
+            <div id="clouds1">{{information.clouds.all}}
+                %</div>
+        </div>
+    </div>
+</div>

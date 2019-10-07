@@ -1,59 +1,53 @@
 $(document).keypress(function (e) {
-    if (e.which == 13) {
-            getWeather();
-    }
+	if (e.which == 13) {
+		getWeather();
+	}
 });
 
-function getWeather(button){
+function getWeather(button) {
 	var cityName = document.getElementById('inp').value;
-	if (cityName.length<1){
+	if (cityName.length < 1) {
 		alert("Enter city name!!!");
 	}
-	else{
+	else {
 		$.ajax({
 			url: "http://api.openweathermap.org/data/2.5/weather",
-			data:	{ "q" : cityName, "units" : "metric", "APPID" : "1db91134dffc102e728e7a3d0ad5eb23"},
-			error: function(data, status) {
-					getEl('errorMsg').innerText = "Something went wrong! Error:  " + data.status;
-					clearFields();
+			data: { "q": cityName, "units": "metric", "APPID": "1db91134dffc102e728e7a3d0ad5eb23" },
+			error: function (data, status) {
+				if (getEl("DATA") !== null){
+					getEl("DATA").remove();
+				};
+				getEl('errorMsg').innerText = "Something went wrong! Error:  " + data.status;
 			}
-		},)
-		.done(
-			function(data){
-				//console.log(data);
-				writeWeather(data);
-			}
-		)
+		})
+			.done(
+				function (data) {
+					//console.log(data);
+					writeWeather(data);
+				}
+			)
 	}
 };
 
-function getEl(id){
+function getEl(id) {
 	return document.getElementById(id);
 };
 
-function writeWeather(information){
-//alert(information.main.temp);
-getEl('errorMsg').innerText = " ";
-getEl('city').innerText = "City:";
-getEl('city1').innerText =information.name;
-getEl('temp').innerText = "Temperature:";
-getEl('temp1').innerText =information.main.temp + " C";
-getEl('weath').innerText = "Weather:";
-getEl('weath1').innerText = information.weather[0].description;
-getEl('press').innerText = "Pressure:";
-getEl('press1').innerText = information.main.pressure + " hPa";
-getEl('wind').innerText = "Wind speed:";
-getEl('wind1').innerText = information.wind.speed + " m/s";
-getEl('clouds').innerText = "Clouds:";
-getEl('clouds1').innerText = information.clouds.all + " %";
-getEl('weatherPic').src = "http://openweathermap.org/img/wn/" + information.weather[0].icon + "@2x.png";
+function writeWeather(information) {
+	getEl("errorMsg").innerText = "";
+	if (getEl("DATA") !== null){
+		getEl("DATA").remove();
+	};
+	information.weather[0].icon = "src=http://openweathermap.org/img/wn/" + information.weather[0].icon + "@2x.png";
+	var info = nunjucks.render('weather.njk', { information });
+	getEl('head').insertAdjacentHTML("afterbegin", info);
 };
 
-function clearFields(){
+function clearFields() {
 	getEl('city').innerText = " ";
-	getEl('city1').innerText =" ";
+	getEl('city1').innerText = " ";
 	getEl('temp').innerText = " ";
-	getEl('temp1').innerText =" ";
+	getEl('temp1').innerText = " ";
 	getEl('weath').innerText = " ";
 	getEl('weath1').innerText = " ";
 	getEl('press').innerText = " ";
