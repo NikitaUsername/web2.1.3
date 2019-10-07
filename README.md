@@ -13,7 +13,8 @@ npm init
 ```
 * установить необходимые пакеты 
 ```bash
-npm install --save gulp gulp-less gulp-autoprefixer gulp-concat-css browser-sync
+sudo npm install --save gulp gulp-less gulp-autoprefixer gulp-concat-css browser-sync express path supervisor
+
 ```
 * инициализировать bower и скачать необходимые пакеты
 ```bash
@@ -23,3 +24,4 @@ bower install --save bootstrap jquery
 
 Все необходимые скрипты находятся в `gulpfile.js` 
 Чтобы запустить обработку sass и njk необходимо ввести `gulp` в терминале, в папке проекта.
+Запускаем localhost `node app` или `supervisor app` чтобы отслеживались изменения данные обновлялись
