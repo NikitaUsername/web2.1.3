@@ -24,4 +24,4 @@ bower install --save bootstrap jquery
 
 Все необходимые скрипты находятся в `gulpfile.js` 
 Чтобы запустить обработку sass и njk необходимо ввести `gulp` в терминале, в папке проекта.
-Запускаем localhost `node app` или `supervisor app` чтобы отслеживались изменения данные обновлялись
+Запускаем localhost `node app` или `supervisor app` чтобы отслеживались изменения и данные обновлялись
