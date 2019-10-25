@@ -6,18 +6,17 @@ var gulp = require('gulp'),
  	browserSync = require('browser-sync'),
 	path = require('path');
 
-// создаем gulp задачу на компиляцию всех nunjucks шаблонов в текущей директории
+
 gulp.task('nunjucks', function() {
 	return gulp.src('./src/njk/index.njk')
 		.pipe(njkRender())
 		.pipe(prettify({
-			indent_size : 4 // размер отступа - 4 пробела
+			indent_size : 4 
         }))
-       // .pipe(concat('./src/index.html'))
 		.pipe(gulp.dest('./src/'));
 });
 
-// задача для компиляции sass в css
+
 gulp.task('sass', function() {
     return gulp.src('./src/sass/*.sass')
         .pipe(sass({
@@ -41,5 +40,5 @@ gulp.task('watch', function () {
     gulp.watch('./src/css/*.css').on("change", browserSync.reload);
     gulp.watch('./src/index.html').on('change', browserSync.reload);
 });
-// при запуске выполняем компиляцию и начинаем следить за изменениями
+
 gulp.task('default', gulp.series('sass', 'nunjucks', 'watch','browser-sync'));

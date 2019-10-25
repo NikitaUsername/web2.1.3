@@ -1,11 +1,12 @@
-$(document).keypress(function (e) {
-	if (e.which == 13) {
-		getWeather();
-	}
-});
 
-function getWeather(button) {
-	var cityName = document.getElementById('inp').value;
+const submitForm = (event) => {
+	event.preventDefault();
+
+	getWeather(event.target[0].value);
+};
+
+function getWeather(cityName) {
+
 	if (cityName.length < 1) {
 		alert("Enter city name!!!");
 	}
@@ -43,18 +44,6 @@ function writeWeather(information) {
 	getEl('head').insertAdjacentHTML("afterbegin", info);
 };
 
-function clearFields() {
-	getEl('city').innerText = " ";
-	getEl('city1').innerText = " ";
-	getEl('temp').innerText = " ";
-	getEl('temp1').innerText = " ";
-	getEl('weath').innerText = " ";
-	getEl('weath1').innerText = " ";
-	getEl('press').innerText = " ";
-	getEl('press1').innerText = " ";
-	getEl('wind').innerText = " ";
-	getEl('wind1').innerText = " ";
-	getEl('clouds').innerText = " ";
-	getEl('clouds1').innerText = "";
-	getEl('weatherPic').src = "";
-};
+$(document).ready( () => {
+	document.getElementById('city_form').addEventListener('submit', submitForm);
+});
