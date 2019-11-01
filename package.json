@@ -1,0 +1,35 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "Web2.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaUsername/Web2.1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaUsername/Web2.1/issues"
+  },
+  "homepage": "https://github.com/NikitaUsername/Web2.1#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.7",
+    "browserify-shim": "^3.8.14",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-html-prettify": "0.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "nunjucks": "^3.2.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.0.2"
+  }
+}

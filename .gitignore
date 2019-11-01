@@ -1,6 +1,4 @@
 node_modules
-package-lock.json
-package.json
 bower.json
 src/css/main.css
 src/index.html
