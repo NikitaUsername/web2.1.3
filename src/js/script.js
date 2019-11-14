@@ -1,3 +1,4 @@
+import { getWeather } from './gettingWeather.js';
 
 const submitForm = (event) => {
 	event.preventDefault();
@@ -11,22 +12,12 @@ const showWeather = (cityName)=>{
 	}
 	else {
 	getWeather(cityName)
-	.then(function (data) {
-		writeWeather(data);
-		})
-	.catch( function(error){
-		writeError(error.status);
-		console.log(error);
-		})
+	.then( data => writeWeather(data.data))
+	.catch(err => writeError(err.message));
 	}
 };
 
-async function getWeather(cityName) {
-		return $.ajax({
-			url: "http://api.openweathermap.org/data/2.5/weather",
-			data: { "q": cityName, "units": "metric", "APPID": "1db91134dffc102e728e7a3d0ad5eb23" }
-		})
-};
+
 
 function getEl(id) {
 	return document.getElementById(id);
