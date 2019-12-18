@@ -22,6 +22,7 @@ const submitForm = (event) => {
 
 function writeWeather(information) {
 
+	console.log(document.body.innerHTML);
 
 	let container;
 	if (information.weather) {
@@ -39,7 +40,7 @@ function writeWeather(information) {
 			error: 'An error was occured: ' + information.message
 		})
 	}
-	document.getElementById('data').innerHTML = container;
+	document.getElementById('info').innerHTML = container;
 };
 
 exports.writeWeather = writeWeather;
