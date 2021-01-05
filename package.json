@@ -4,7 +4,7 @@
   "description": "## Руководство по запуску проекта Для запуска проекта локально и работы с ним необходимо: * node.js (скачать на оф. сайте) * установить gulp и bower  ```bash npm install -g bower gulp ``` * в папке проекта инициализировать npm ```bash npm init ``` * установить необходимые пакеты  ```bash sudo npm install --save gulp gulp-less gulp-autoprefixer gulp-concat-css browser-sync express path supervisor",
   "main": "gulpfile.js",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.7",
     "browserify-shim": "^3.8.14",
